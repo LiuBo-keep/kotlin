@@ -10,8 +10,7 @@ import org.springframework.stereotype.Service
  * @version 1.0
  */
 @Service
-class UserServiceImpl: UserService {
-
+class UserServiceImpl : UserService {
 
 
     override fun getUser(): UserInfo {

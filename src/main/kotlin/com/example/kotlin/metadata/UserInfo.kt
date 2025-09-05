@@ -12,7 +12,7 @@ class UserInfo constructor() {
     private var sex: String = ""
     private var address: String = ""
 
-    constructor(name: String, age: Int, sex: String, address: String) : this {
+    constructor(name: String, age: Int, sex: String, address: String) : this() {
         this.name = name
         this.age = age
         this.sex = sex
@@ -49,10 +49,6 @@ class UserInfo constructor() {
 
     fun setAddress(address: String) {
         this.address = address
-    }
-
-    override fun equals(other: Any?): Boolean {
-        if (this === other) return true
     }
 
     override fun hashCode(): Int {
