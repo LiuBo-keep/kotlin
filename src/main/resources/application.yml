@@ -1,0 +1,27 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: kotlin
+
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/kotlin?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.zaxxer.hikari.HikariDataSource
+    hikari:
+      connection-timeout: 60000
+      maximum-pool-size: 10
+      minimum-idle: 1
+      idle-timeout: 300000
+      max-lifetime: 60000
+      auto-commit: true
+      pool-name: HikariCP
+
+# mybatis config
+mybatis:
+  configuration:
+    # \u5F00\u542F\u4E0B\u5212\u7EBF\u5230\u9A7C\u5CF0\u547D\u540D\u7684\u81EA\u52A8\u8F6C\u6362
+    map-underscore-to-camel-case: true
