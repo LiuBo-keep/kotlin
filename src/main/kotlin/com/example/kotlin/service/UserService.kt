@@ -1,6 +1,6 @@
 package com.example.kotlin.service
 
-import com.example.kotlin.metadata.UserInfo
+import com.example.kotlin.metadata.UserInfoResponse
 
 /**
  * @author  aidan.liu
@@ -9,7 +9,7 @@ import com.example.kotlin.metadata.UserInfo
  */
 interface UserService {
 
-    fun getUser(): UserInfo
+    fun getUser(): List<UserInfoResponse>
 
-    fun getUser(name: String): UserInfo
+    fun getUserByName(name: String): UserInfoResponse?
 }

@@ -1,9 +1,10 @@
 package com.example.kotlin.controller
 
-import com.example.kotlin.metadata.UserInfo
+import com.example.kotlin.metadata.UserInfoResponse
 import com.example.kotlin.service.UserService
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.web.bind.annotation.GetMapping
+import org.springframework.web.bind.annotation.PathVariable
 import org.springframework.web.bind.annotation.RestController
 
 /**
@@ -18,7 +19,12 @@ class UserController {
     private lateinit var userService: UserService
 
     @GetMapping
-    fun getUser(): UserInfo {
+    fun getUser(): List<UserInfoResponse> {
         return userService.getUser();
+    }
+
+    @GetMapping("/{name}")
+    fun getUserByName(@PathVariable name: String): UserInfoResponse? {
+        return userService.getUserByName(name);
     }
 }

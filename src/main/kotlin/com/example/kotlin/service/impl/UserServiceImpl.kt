@@ -1,7 +1,10 @@
 package com.example.kotlin.service.impl
 
-import com.example.kotlin.metadata.UserInfo
+import com.example.kotlin.dao.UserDao
+import com.example.kotlin.metadata.UserInfoResponse
+import com.example.kotlin.metadata.enums.UserType
 import com.example.kotlin.service.UserService
+import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Service
 
 /**
@@ -12,13 +15,14 @@ import org.springframework.stereotype.Service
 @Service
 class UserServiceImpl : UserService {
 
+    @Autowired
+    private lateinit var userDao: UserDao
 
-    override fun getUser(): UserInfo {
-
-        TODO("Not yet implemented")
+    override fun getUser(): List<UserInfoResponse>{
+        return userDao.getUser();
     }
 
-    override fun getUser(name: String): UserInfo {
-        TODO("Not yet implemented")
+    override fun getUserByName(name: String): UserInfoResponse? {
+        return userDao.getUserByName( name);
     }
 }
